@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <ListView 
+        android:id="@+id/online_listview"
+        android:layout_above="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        
+    </ListView>
+    
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+
+    <EditText 
+        android:id="@+id/input_text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="第"
+        />
+    
+    <Button 
+        android:id="@+id/submint_button"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_below="@id/text"
+        android:layout_height="50dp"
+        android:text="submit"
+        />
+</RelativeLayout>
