@@ -2,8 +2,11 @@ package com.example.test_14_socket_phone_client;
 
 import java.net.Socket;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -14,6 +17,8 @@ import android.widget.TextView;
 import com.example.test_14_socket_phone_client.message.MessageManager;
 import com.example.test_14_socket_phone_client.message.MessageManager.OnSocketListener;
 import com.example.test_14_socket_phone_client.message.ReadMessageAsyncTask.OnMessageListener;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 public class MainActivity extends Activity implements OnClickListener, OnMessageListener, OnSocketListener {
 
@@ -50,7 +55,14 @@ public class MainActivity extends Activity implements OnClickListener, OnMessage
 
 	@Override
 	public void onClick(View v) {
-		mMessageManager.sendMessage(mInputText.getText().toString());
+		Gson gson = new Gson();
+		ClientProtocolModle modle = new ClientProtocolModle();
+		modle.setmFromAndroidId(Machine.getInstance(getApplicationContext()).getAndroidId());
+		modle.setmToAndroidId("1");
+		modle.setmMessage(mInputText.getText().toString());
+		String json = gson.toJson(modle);
+		mMessageManager.sendMessage(json);
+		//mMessageManager.sendMessage(mInputText.getText().toString());
 	}
 
 	@Override

@@ -39,8 +39,8 @@ public class WriteMessageAsyncTask extends AsyncTask<String, String, String> {
 				dout = new DataOutputStream(out);
 			}
 
-			dout.writeUTF(Machine.getInstance(ClientApplication.getAppContext()).getAndroidId()
-					+ DIVIDER + "1" + DIVIDER + params[0]);
+			dout.writeUTF(/*Machine.getInstance(ClientApplication.getAppContext()).getAndroidId()
+					+ DIVIDER + "1" + DIVIDER + */params[0]);
 			dout.flush();
 
 		} catch (Exception e) {

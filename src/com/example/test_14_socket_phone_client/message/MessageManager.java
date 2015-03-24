@@ -63,7 +63,7 @@ public class MessageManager {
 		protected Socket doInBackground(String... params) {
 			Socket socket = null;
 			try {
-				socket = new Socket("192.168.215.103", 5432);
+				socket = new Socket("192.168.214.63", 5432);
 			} catch (UnknownHostException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
