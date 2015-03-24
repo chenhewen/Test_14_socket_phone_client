@@ -1,5 +1,4 @@
 package com.example.test_14_socket_phone_client;
-import com.google.gson.annotations.SerializedName;
 
 
 /**
@@ -39,6 +38,4 @@ public class ClientProtocolModle {
 	public void setmMessage(String mMessage) {
 		this.mMessage = mMessage;
 	}
-
-	
 }

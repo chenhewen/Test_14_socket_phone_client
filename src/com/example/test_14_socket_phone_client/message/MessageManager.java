@@ -96,4 +96,19 @@ public class MessageManager {
 		mOnMessageListener = l;
 	}
 
+	public void shutdown() {
+		if (mSocket != null) {
+			try {
+				mSocket.shutdownInput();
+				mSocket.shutdownOutput();
+				if(!mSocket.isClosed())  {
+					mSocket.close();
+					mSocket = null;
+				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

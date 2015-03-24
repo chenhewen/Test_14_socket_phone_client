@@ -75,5 +75,10 @@ public class MainActivity extends Activity implements OnClickListener, OnMessage
 		mMessageManager.startListenServer();
 	}
 	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		mMessageManager.shutdown();
+	}
 	
 }
